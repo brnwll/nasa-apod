@@ -17,9 +17,7 @@ export default function ApodDatePicker({ selectedDate, setDate }) {
         id="apod-date-picker"
         selected={selectedDate}
         onChange={(date) => valid(date) && setDate(date)}
-      >
-        Test
-      </DatePicker>
+      ></DatePicker>
     </div>
   );
 }
