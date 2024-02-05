@@ -6,6 +6,8 @@ import ApodContainer from "./ApodContainer";
 import { normalize } from "../utils/dateUtils.js";
 import { cssStars } from "../utils/cssUtils.js";
 import defaultImage from "../images/default.jpg";
+import nasaLogo from "../images/nasa-logo.png";
+import "./App.css";
 
 const StyledApp = styled.div`
   display: flex;
@@ -57,6 +59,10 @@ function App() {
 
   return (
     <StyledApp>
+      <header>
+        <img src={nasaLogo} alt="NASA logo" />
+        <h1>Astronomy Photo of the Day</h1>
+      </header>
       <ApodDatePicker selectedDate={date} setDate={setDate}></ApodDatePicker>
       <ApodContainer data={data} fetchingData={fetchingData}></ApodContainer>
     </StyledApp>
