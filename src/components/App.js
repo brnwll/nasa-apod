@@ -4,6 +4,7 @@ import styled from "styled-components";
 import ApodDatePicker from "./ApodDatePicker";
 import ApodContainer from "./ApodContainer";
 import { normalize } from "../utils/dateUtils.js";
+import defaultImage from "../images/default.jpg";
 
 const StyledApp = styled.div`
   display: flex;
@@ -15,7 +16,17 @@ const StyledApp = styled.div`
 `;
 
 // serverless function to fetch the Astronomy Photo Of The Day
-const FETCH_APOD_URL = "https://nasa-apod-five.vercel.app/api/nasa-apod";
+//const FETCH_APOD_URL = "https://nasa-apod-five.vercel.app/api/nasa-apod";
+const FETCH_APOD_URL = "temp-bad-url DELETE once done styling the app";
+
+// display when there is an error fetching the data
+const defaultData = {
+  url: defaultImage,
+  title: "Missing image",
+  media_type: "image",
+  copyright: "",
+  explanation: "This is a default image",
+};
 
 function App() {
   const [data, setData] = useState(null);
@@ -24,7 +35,6 @@ function App() {
 
   useEffect(() => {
     setFetchingData(true);
-
     const config = {
       method: "GET",
       url: FETCH_APOD_URL,
@@ -32,16 +42,14 @@ function App() {
         normalizedDate: normalize(date),
       },
     };
-
     axios(config)
       .then((res) => {
         setData(res.data);
         setFetchingData(false);
       })
       .catch((err) => {
-        // TODO: Add a modal indicating that no image was present for date
-        // and set a default image
-        console.error(err);
+        setData(defaultData);
+        setFetchingData(false);
       });
   }, [date]);
 
