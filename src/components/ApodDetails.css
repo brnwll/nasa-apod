@@ -29,6 +29,8 @@
 #apod-details .authorAndTitle h3 {
   text-transform: uppercase;
   text-align: center;
+  color: white;
+  font-weight: 700;
 }
 
 #apod-details .authorAndTitle h2::before {
