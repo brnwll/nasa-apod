@@ -20,8 +20,7 @@ const StyledApp = styled.div`
 `;
 
 // serverless function to fetch the Astronomy Photo Of The Day
-//const FETCH_APOD_URL = "https://nasa-apod-five.vercel.app/api/nasa-apod";
-const FETCH_APOD_URL = "temp-bad-url DELETE once done styling the app";
+const FETCH_APOD_URL = "https://nasa-apod-five.vercel.app/api/nasa-apod";
 
 // display when there is an error fetching the data
 const defaultData = {
