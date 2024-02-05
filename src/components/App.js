@@ -15,17 +15,26 @@ const StyledApp = styled.div`
 `;
 
 function App() {
-  const API_URL = `https://api.nasa.gov/planetary/apod?api_key=TODO`;
+  const FETCH_APOD_URL = "https://nasa-apod-five.vercel.app/api/nasa-apod";
   const [data, setData] = useState(null);
   const [date, setDate] = useState(new Date());
   // track fetching to display user feedback when changing the date
   const [fetchingData, setFetchingData] = useState(true);
 
-  const fetchData = (url = API_URL) => {
-    // TODO: Handle x-ratelimit-limit exceeded
+  useEffect(() => {
     setFetchingData(true);
-    axios
-      .get(url)
+
+    const config = {
+      method: "GET",
+      url: FETCH_APOD_URL,
+      params: {
+        normalizedDate: normalize(date),
+      },
+    };
+
+    console.log(config);
+
+    axios(config)
       .then((res) => {
         setData(res.data);
         setFetchingData(false);
@@ -38,18 +47,13 @@ function App() {
         //);
         console.error(err);
       });
-  };
-
-  useEffect(() => {
-    const api = `${API_URL}&date=${normalize(date)}`; // append &date=YYYY-MM-DD
-    fetchData(api);
   }, [date]);
 
-  const fetchYesterday = () => {
-    let yesterday = new Date();
-    yesterday.setDate(new Date().getDate() - 1);
-    setDate(yesterday);
-  };
+  // const fetchYesterday = () => {
+  //   let yesterday = new Date();
+  //   yesterday.setDate(new Date().getDate() - 1);
+  //   setDate(yesterday);
+  // };
 
   return (
     <StyledApp>
