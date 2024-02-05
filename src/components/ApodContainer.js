@@ -13,8 +13,8 @@ const StyledApodContainer = styled.div`
   margin-top: 2rem;
   max-width: 960px;
   opacity: 0;
-  transform: scale(1.1);
-  animation: ${fadeIn} 0.2s ease-in-out forwards;
+  transform: scale(0.9);
+  animation: ${fadeIn} 1s ease-in-out forwards;
 `;
 
 export default function ApodContainer({ fetchingData, data }) {

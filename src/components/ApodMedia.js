@@ -1,26 +1,14 @@
 import React from "react";
-import styled from "styled-components";
-
-const StyledApodMedia = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  img,
-  iframe {
-    width: 100%;
-    border-radius: 1rem;
-    box-shadow: 0px 2px 5px black;
-  }
-`;
+import "./ApodMedia.css";
 
 export default function ApodMedia({ srcUrl, title, mediaType }) {
   const image = (
-    <StyledApodMedia>
+    <div id="apod-media-wrapper">
       <img src={srcUrl} alt={title} />
-    </StyledApodMedia>
+    </div>
   );
   const video = (
-    <StyledApodMedia>
+    <div id="apod-media-wrapper">
       <iframe
         width="853"
         height="480"
@@ -29,7 +17,7 @@ export default function ApodMedia({ srcUrl, title, mediaType }) {
         allowFullScreen
         title={title}
       />
-    </StyledApodMedia>
+    </div>
   );
 
   if (mediaType === "image") return image;
