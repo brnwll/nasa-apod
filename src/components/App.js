@@ -4,6 +4,7 @@ import styled from "styled-components";
 import ApodDatePicker from "./ApodDatePicker";
 import ApodContainer from "./ApodContainer";
 import { normalize } from "../utils/dateUtils.js";
+import { cssStars } from "../utils/cssUtils.js";
 import defaultImage from "../images/default.jpg";
 
 const StyledApp = styled.div`
@@ -13,6 +14,7 @@ const StyledApp = styled.div`
   min-height: 100vh;
   padding: 2rem;
   background-color: black;
+  ${cssStars(50)}
 `;
 
 // serverless function to fetch the Astronomy Photo Of The Day

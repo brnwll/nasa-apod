@@ -7,6 +7,7 @@ const StyledApodMedia = styled.div`
   align-items: center;
   img,
   iframe {
+    width: 100%;
     border-radius: 1rem;
     box-shadow: 0px 2px 5px black;
   }
