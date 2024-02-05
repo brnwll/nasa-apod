@@ -14,11 +14,12 @@ const StyledApp = styled.div`
   background-color: black;
 `;
 
+// serverless function to fetch the Astronomy Photo Of The Day
+const FETCH_APOD_URL = "https://nasa-apod-five.vercel.app/api/nasa-apod";
+
 function App() {
-  const FETCH_APOD_URL = "https://nasa-apod-five.vercel.app/api/nasa-apod";
   const [data, setData] = useState(null);
   const [date, setDate] = useState(new Date());
-  // track fetching to display user feedback when changing the date
   const [fetchingData, setFetchingData] = useState(true);
 
   useEffect(() => {
@@ -32,28 +33,17 @@ function App() {
       },
     };
 
-    console.log(config);
-
     axios(config)
       .then((res) => {
         setData(res.data);
         setFetchingData(false);
       })
       .catch((err) => {
-        // at 12am the api is not updated immediately, resulting in 404, so...
-        //fetchYesterday();
-        //alert(
-        //  `The selected date does not have an Astonomy Photo Of The Day. Displaying latest photo.`
-        //);
+        // TODO: Add a modal indicating that no image was present for date
+        // and set a default image
         console.error(err);
       });
   }, [date]);
-
-  // const fetchYesterday = () => {
-  //   let yesterday = new Date();
-  //   yesterday.setDate(new Date().getDate() - 1);
-  //   setDate(yesterday);
-  // };
 
   return (
     <StyledApp>

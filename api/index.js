@@ -1,15 +1,14 @@
-// Load packages
 const express = require("express");
 const cors = require("cors");
 const axios = require("axios");
-
-// Create express server
-const app = express();
 
 // base api url with api key
 const BASE_API_URL = "https://api.nasa.gov/planetary/apod";
 const API_KEY = process.env.REACT_APP_API_KEY;
 const API_URL = `${BASE_API_URL}?api_key=${API_KEY}`;
+
+// Create express server
+const app = express();
 
 app.use(
   cors({
@@ -37,8 +36,7 @@ app.get("/api/nasa-apod", (req, res) => {
     }
   }
 
-  // this is how to get the request parameters from the frontend
-  const normalizedDate = req.query.normalizedDate;
+  const normalizedDate = req.query.normalizedDate; // get params from frontend
   getApod(normalizedDate);
 });
 
