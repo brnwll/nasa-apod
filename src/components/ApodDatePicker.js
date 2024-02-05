@@ -2,6 +2,7 @@ import React from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { normalize } from "../utils/dateUtils.js";
+import "./ApodDatePicker.css";
 
 export default function ApodDatePicker({ selectedDate, setDate }) {
   const valid = (clickedDate) => {
@@ -11,9 +12,14 @@ export default function ApodDatePicker({ selectedDate, setDate }) {
   };
 
   return (
-    <DatePicker
-      selected={selectedDate}
-      onChange={(date) => valid(date) && setDate(date)}
-    ></DatePicker>
+    <div id="apod-date-picker-wrapper">
+      <DatePicker
+        id="apod-date-picker"
+        selected={selectedDate}
+        onChange={(date) => valid(date) && setDate(date)}
+      >
+        Test
+      </DatePicker>
+    </div>
   );
 }

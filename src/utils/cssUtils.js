@@ -20,6 +20,5 @@ export const cssStars = (count) => {
     background-size: ${size.slice(0, -1)};
     background-position: ${position.slice(0, -1)};
   `;
-  console.log(css);
   return css;
 };

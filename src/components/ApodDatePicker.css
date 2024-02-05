@@ -1,0 +1,21 @@
+#apod-date-picker-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.react-datepicker__input-container::before {
+  content: "🗓️";
+  font-size: 1.4rem;
+  margin-right: 0.6rem;
+  align-self: center;
+  justify-self: center;
+}
+
+#apod-date-picker {
+  padding: 0.6rem 0.8rem;
+  border-radius: 0.6rem;
+  border: none;
+  font-size: 1rem;
+  box-shadow: inset 0 0 5px black;
+}
