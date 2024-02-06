@@ -64,6 +64,24 @@ function App() {
       </header>
       <ApodDatePicker selectedDate={date} setDate={setDate}></ApodDatePicker>
       <ApodContainer data={data} fetchingData={fetchingData}></ApodContainer>
+      <footer>
+        <p>
+          Made by{" "}
+          <a href="https://github.com/brnwll" target="_blank" rel="noreferrer">
+            @brnwll
+          </a>
+        </p>
+        <p>
+          Data provided by{" "}
+          <a
+            href="https://apod.nasa.gov/apod/astropix.html"
+            target="_blank"
+            rel="noreferrer"
+          >
+            NASA API
+          </a>
+        </p>
+      </footer>
     </StyledApp>
   );
 }

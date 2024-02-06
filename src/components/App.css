@@ -11,3 +11,25 @@ header img {
   width: 75px;
   margin-bottom: 0.3rem;
 }
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.412);
+  font-size: 0.8rem;
+  margin: 3rem 0 2rem 0;
+  padding-top: 2rem;
+  border-top: 1px dotted rgba(255, 255, 255, 0.085);
+  width: 100%;
+}
+
+footer a {
+  color: rgba(255, 255, 255, 0.412);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: white;
+  text-decoration: underline;
+}
