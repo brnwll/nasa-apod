@@ -1,24 +1,29 @@
-import React from 'react'
-import styled, { keyframes } from 'styled-components'
+import React from "react";
+import styled, { keyframes } from "styled-components";
 
 const fadeIn = keyframes`
-  100% { opacity: 1; }`
+  100% { opacity: 1; }`;
 const rotatePlanent = keyframes`
-  100% { transform: rotate(360deg); }`
+  100% { transform: rotate(360deg); }`;
 const StyledSpinner = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   opacity: 0;
   animation: ${fadeIn} 0.1s ease-in-out forwards;
+  height: 100vh;
   .planet {
     width: 4rem;
     height: 4rem;
-    margin-top: 4rem;
+    margin-top: 6rem;
     margin-bottom: 1rem;
     border-radius: 2rem;
-    background: rgb(174,222,238);
-    background: radial-gradient(circle, rgba(174,222,238,1) 0%, rgba(81,144,212,1) 100%);
+    background: rgb(174, 222, 238);
+    background: radial-gradient(
+      circle,
+      rgba(174, 222, 238, 1) 0%,
+      rgba(81, 144, 212, 1) 100%
+    );
     animation: ${rotatePlanent} 3s linear infinite forwards;
   }
   .moon {
@@ -34,7 +39,7 @@ const StyledSpinner = styled.div`
     opacity: 70%;
     animation: ${fadeIn} 0.5s ease-in-out alternate infinite;
   }
-`
+`;
 
 export default function Spinner() {
   return (
@@ -44,5 +49,5 @@ export default function Spinner() {
       </div>
       <p className="loading">Loading Photo</p>
     </StyledSpinner>
-  )
+  );
 }

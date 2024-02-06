@@ -1,0 +1,119 @@
+.planet,
+.moon {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+}
+
+.crater {
+  position: absolute;
+  border-radius: 50%;
+}
+
+#earth .planet {
+  width: 100px; /* 7,917 miles in diameter - 1px = ~79mi */
+  height: 100px;
+  margin: -50px 0 0 -50px;
+  background-repeat: repeat-x;
+  background-image: url("../images/earth.svg");
+  background-size: auto 108%;
+  background-color: rgb(76, 152, 244);
+  box-shadow: inset 0 0 30px 0px rgb(0, 0, 0),
+    0 0 20px -5px rgba(42, 124, 255, 0.922);
+  z-index: 30;
+  animation: rotate-earth 1.5s linear infinite; /* 1day = 10s */
+}
+
+.moon-container {
+  /* prevents moon animation from displaying the description below */
+  min-height: 50px;
+  margin-bottom: -50px;
+}
+
+#earth .moon {
+  top: -50px; /* half the size of the planet */
+  width: 22px;
+  height: 22px;
+  margin: -11px 0 0 -11px;
+  background: white;
+  box-shadow: 0 0 20px -5px rgb(0, 0, 0), inset 0 0 20px -5px rgb(0, 0, 0);
+  animation: moon-orbit 10s ease-in-out infinite; /* 1 x 27 = 27 */
+}
+
+#earth .moon .crater {
+  border-bottom: 1px solid rgba(103, 102, 102, 0.236);
+  border-right: 1px solid rgba(93, 93, 93, 0.056);
+  background-color: rgba(28, 28, 28, 0.069);
+}
+
+#earth .moon #crater1 {
+  top: 15%;
+  left: 20%;
+  width: 5px;
+  height: 5px;
+}
+
+#earth .moon #crater2 {
+  top: 65%;
+  left: 35%;
+  width: 4px;
+  height: 4px;
+}
+
+#earth .moon #crater3 {
+  top: 45%;
+  left: 65%;
+  width: 3px;
+  height: 3px;
+}
+
+@keyframes rotate-earth {
+  0% {
+    background-position-x: 183%;
+  }
+  100% {
+    background-position-x: 0%;
+  }
+}
+
+@keyframes moon-orbit {
+  0% {
+    /*top: -35px;*/
+    left: calc(50% - 200px);
+    z-index: 31;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(229, 229, 229);
+  }
+  25% {
+    /* passing in front of the planet */
+    z-index: 31;
+    width: 25px;
+    height: 25px;
+    background-color: white;
+  }
+  50% {
+    /*top: -65px;*/
+    left: calc(50% + 200px);
+    z-index: 29;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(229, 229, 229);
+  }
+  75% {
+    /* passing behind the planet */
+    z-index: 29;
+    width: 15px;
+    height: 15px;
+    background-color: rgb(190, 190, 190);
+  }
+  100% {
+    /*top: -35px;*/
+    left: calc(50% - 200px);
+    z-index: 31;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(229, 229, 229);
+  }
+}
