@@ -1,31 +1,22 @@
-# Create React App
+# NASA Astronomy Picture of the Day (APOD) Viewer
 
-This directory is a brief example of a [Create React App](https://github.com/facebook/create-react-app) site that can be deployed to Vercel with zero configuration.
+This project is a web application designed to showcase the NASA Astronomy Picture of the Day (APOD). Each day a different image or photograph of our fascinating universe is featured, along with a brief explanation written by a professional astronomer.
 
-## Deploy Your Own
+The application is live at [https://nasa-apod-five.vercel.app/](https://nasa-apod-five.vercel.app/)
 
-Deploy your own Create React App project with Vercel.
+## Features
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/vercel/tree/main/examples/create-react-app&template=create-react-app)
+- **Daily Updates**: Automatically fetches the latest Astronomy Picture of the Day from NASA's API.
+- **Archives**: Users can browse through past pictures by selecting a specific date.
+- **Responsive Design**: Ensures a seamless experience on both desktop and mobile devices.
+- **Image Details**: Provides details about the image, including the title, date, and explanation from NASA.
 
-_Live Example: https://create-react-template.vercel.app/_
+## Technologies Used
 
-## Available Scripts
+- **Frontend**: HTML, CSS, JavaScript (React.js)
+- **API**: NASA APOD API
+- **Deployment**: Vercel
 
-In the project directory, you can run:
+## License
 
-### `npm start`
-
-Runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes. You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode. See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.
-
-It correctly bundles React in production mode and optimizes the build for the best performance. The build is minified and the filenames include the hashes.
+This project is licensed under the MIT License - see the [LICENSE](https://opensource.org/license/mit/) file for details. This license allows you to use, share, modify, and distribute the software as long as you include the original license and copyright notice in your distribution.
