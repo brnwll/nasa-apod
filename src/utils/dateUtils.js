@@ -5,5 +5,6 @@
  * @returns string YYYY-MM-DD
  */
 export const normalize = (date) => {
+  if (!date) return null;
   return `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
 };
